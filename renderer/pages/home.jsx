@@ -2,12 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import LoginPage from './LoginPage/LoginPage';
+import styles from './home.module.scss';
 
 function Home() {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-javascript)</title>
+        <title>Escobar Employee Management System</title>
       </Head>
       {/* <div>
         <p>
@@ -18,7 +19,9 @@ function Home() {
         </p>
         <img src="/images/logo.png" />
       </div> */}
-      <LoginPage />
+      <div className={styles.body}>
+        <LoginPage />
+      </div>
     </React.Fragment>
   );
 };

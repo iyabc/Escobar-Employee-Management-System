@@ -26,10 +26,12 @@ const LoginPage = () => {
     return (
         <div className={styles.section}>
             <div className={styles.container}>
-                <div className={styles.header}>Login Page</div>
+                <div className={styles.header}>
+                    <div className={styles.upper}>Login Page</div>
+                    <div className={styles.lower}>Escobar Employee Management System</div>
+                </div>
                 <div className={styles.content}>
                     <div className={`${styles['row']} ${styles['username']}}`}>
-                        USERNAME
                         <StyledInput
                             {...inputProps}
                             placeholder="Type in here"
@@ -37,7 +39,6 @@ const LoginPage = () => {
                         {/* <span>Value: {inputProps.value} </span> */}
                     </div>
                     <div className={`${styles['row']} ${styles['username']}}`}>
-                        PASSWORD
                         <StyledInput
                             {...inputProps}
                             placeholder="Type in here"
