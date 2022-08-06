@@ -1,0 +1,15 @@
+html,
+body {
+  font-family: "Montserrat", Helvetica, sans-serif;
+  height: 100vh;
+  scroll-padding-top: 3rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}

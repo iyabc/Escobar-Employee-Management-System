@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import LoginPage from './LoginPage/LoginPage';
 
 function Home() {
   return (
@@ -8,7 +9,7 @@ function Home() {
       <Head>
         <title>Home - Nextron (with-javascript)</title>
       </Head>
-      <div>
+      {/* <div>
         <p>
           ⚡ Electron + Next.js ⚡ -
           <Link href="/next">
@@ -16,7 +17,8 @@ function Home() {
           </Link>
         </p>
         <img src="/images/logo.png" />
-      </div>
+      </div> */}
+      <LoginPage />
     </React.Fragment>
   );
 };
