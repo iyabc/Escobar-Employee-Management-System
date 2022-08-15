@@ -1,0 +1,58 @@
+@import '/styles/variables.scss';
+
+.section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $color--blue;
+
+    .outer_container {
+        flex: 1;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .inner_container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            background-color: white;
+            width: 80%;
+            height: 95%;
+
+            .content_top {
+                flex-grow: 1;
+                display: flex;
+                width: 100%;
+                padding-top: 1.2rem;
+                padding: 1.2rem
+                justify-content: space-between;
+
+                .back_btn {
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .header {
+
+                    .title {
+                        text-align: center;
+                        font-size: $bodyFontSize;
+                        font-weight: $h3FontWeight;
+                    }
+                }
+            }
+
+            .content_bottom {
+                flex-grow: 10;
+                width: 100%;
+                overflow-y: scroll;
+            }
+        }
+    }
+
+}

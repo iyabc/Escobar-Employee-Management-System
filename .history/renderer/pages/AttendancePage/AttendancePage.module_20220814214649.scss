@@ -1,0 +1,8 @@
+@import '/styles/variables.scss';
+
+.section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $color--blue;
+}

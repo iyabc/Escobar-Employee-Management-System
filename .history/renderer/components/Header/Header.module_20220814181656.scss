@@ -1,0 +1,15 @@
+@import '/styles/variables.scss';
+
+.section {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        background-color: aqua;
+    }
+}

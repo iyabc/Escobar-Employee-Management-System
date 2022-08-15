@@ -1,0 +1,55 @@
+@import '/styles/variables.scss';
+
+.section {
+    // padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        color: $color--blue2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+
+        .left {
+
+            .upper {
+                font-size: $body2FontSize;
+                font-weight: 600;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .lower {
+                font-size: $bodyFontSize;
+                font-weight: 700;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &:hover {
+                transform: translateY(10);
+            }
+        }
+
+        .right {
+            font-size: $h5FontSize;
+            font-weight: 700;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &:hover {
+            transition: 1s ease-in-out;
+            color: $color--darkblue;
+        }
+    }
+}

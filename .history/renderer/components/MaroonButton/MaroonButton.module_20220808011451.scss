@@ -1,0 +1,11 @@
+@import '/styles/variables.scss';
+
+.button {
+    background-color: $color--maroon;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 2rem;
+    color: white;
+    font-size: $body2FontSize;
+    font-weight: $h2FontWeight;
+}

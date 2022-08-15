@@ -1,0 +1,22 @@
+@import '/styles/variables.scss';
+
+.outer_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+
+    .inner_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        background-color: aquamarine;
+
+        .row {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}

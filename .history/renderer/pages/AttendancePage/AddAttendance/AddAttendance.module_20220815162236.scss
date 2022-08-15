@@ -1,0 +1,24 @@
+@import '/styles/variables.scss';
+
+.outer_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+
+    .inner_container {
+        flex-grow: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        background-color: aquamarine;
+        gap: 1rem;
+
+        .row {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}

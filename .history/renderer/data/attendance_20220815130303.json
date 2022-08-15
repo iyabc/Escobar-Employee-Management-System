@@ -1,0 +1,6 @@
+{
+    "attendance": [
+        { "id": "att_id", "label": "Attendance ID", "minWidth": 100 },
+        { "id": "emp_id", "label": "ISO\u00a0Code", "minWidth": 100 }
+    ]
+}

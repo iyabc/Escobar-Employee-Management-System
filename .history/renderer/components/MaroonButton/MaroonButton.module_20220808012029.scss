@@ -1,0 +1,17 @@
+@import '/styles/variables.scss';
+
+.button {
+    display: flex;
+    justify-content: center;
+    width: 3rem !important;
+    background-color: $color--maroon;
+    padding: 1.5rem;
+    border-radius: 10rem;
+    color: white;
+    font-size: $bodyFontSize;
+    font-weight: $h2FontWeight;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

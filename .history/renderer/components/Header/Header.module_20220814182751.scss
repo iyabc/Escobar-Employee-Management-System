@@ -1,0 +1,32 @@
+@import '/styles/variables.scss';
+
+.section {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+
+        .left {
+
+            .upper {
+                font-size: $body2FontSize;
+                font-weight: $h2FontWeight;
+            }
+
+            .lower {
+                font-size: $bodyFontSize;
+                font-weight: $h1FontWeight;
+            }
+        }
+
+        .right {
+            font-size: $bodyFontSize;
+            font-weight: $h1FontWeight;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    padding: 0.5rem;
+
+    .buttons {
+        display: flex;
+
+        .min_btn {
+
+        }
+    
+        .max_btn {
+    
+        }
+    
+        .exit_btn {
+
+        }
+    }
+}

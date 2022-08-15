@@ -1,0 +1,9 @@
+@import '/styles/variables.scss';
+
+.outer_container {
+    background-color: aqua;
+
+    .inner_container {
+        background-color: aquamarine;
+    }
+}

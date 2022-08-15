@@ -1,0 +1,8 @@
+{
+    "attendance": [
+        { "id": "att_id", "label": "Attendance ID", "minWidth": 100 },
+        { "id": "emp_id", "label": "Employee ID", "minWidth": 100 },
+        { "id": "check_in", "label": "Check-in", "minWidth": 100 },
+        { "id": "check_out", "label": "Check-out", "minWidth": 100 }
+    ]
+}

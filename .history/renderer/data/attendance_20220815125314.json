@@ -1,0 +1,10 @@
+{
+    "attendance":[
+        {
+            "Attendance ID":"",
+            "Employee ID":"",
+            "Check-in":"",
+            "Check-out":""
+        }
+    ]
+}

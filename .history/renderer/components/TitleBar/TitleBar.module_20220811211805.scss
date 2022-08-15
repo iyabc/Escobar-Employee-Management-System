@@ -1,0 +1,14 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    width: 100%;
+    height: fit-content;
+
+    .buttons {
+        width: 50%;
+    }
+
+}

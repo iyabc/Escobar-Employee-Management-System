@@ -1,0 +1,11 @@
+@import '/styles/variables.scss';
+
+.outer_container {
+    display: flex;
+    align-items: center;
+    background-color: aqua;
+
+    .inner_container {
+        background-color: aquamarine;
+    }
+}
