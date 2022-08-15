@@ -19,6 +19,7 @@
     "electron-store": "^8.0.1",
     "fontawesome": "^5.6.3",
     "framer-motion": "^7.0.0",
+    "material-ui-search-bar": "^1.0.0",
     "sass": "^1.54.3",
     "styled-components": "^5.3.5"
   },

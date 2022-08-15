@@ -38,20 +38,10 @@
                     }
                 }
 
-                .header {
-                    display: flex;
-                    flex-direction: column;
-                    display: flex;
-                    align-items: center;
-
-                    .title {
-                        font-size: $h5FontSize;
-                        font-weight: 800;
-                    }
-
-                    .search_bar {
-                        width: 100%;
-                    }
+                .title_header {
+                    font-size: $bodyFontSize;
+                    font-weight: 800;
+                    color: $color--black;
                 }
             }
 
