@@ -1,0 +1,30 @@
+@import '/styles/variables.scss';
+
+.search_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 100%;
+
+    
+    .close_btn {
+        position: absolute;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 700;
+        padding: 1rem;
+
+        &:hover {
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "employeeData": [
+        {
+            "employee_id": 100, 
+            "last_name": "Panes", 
+            "first_name": "Julienne Andrea", 
+            "employee_contact": "09218186805", 
+            "employee_address": "Blk 7 L5 Luzville Subdivision, Panacan, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Admin"
+        },
+        {
+            "employee_id": 100, 
+            "last_name": "Panes", 
+            "first_name": "Julienne Andrea", 
+            "employee_contact": "09218186805", 
+            "employee_address": "Blk 7 L5 Luzville Subdivision, Panacan, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Admin"
+        }
+    ]
+}

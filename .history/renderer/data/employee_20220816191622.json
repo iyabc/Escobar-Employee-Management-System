@@ -1,0 +1,8 @@
+{
+    "employee": [
+        { "id": "emp_id", "label": "Employee ID", "minWidth": 50 },
+        { "id": "emp_name", "label": "Last Name", "minWidth": 200 },
+        { "id": "emp_name", "label": "First Name", "minWidth": 100 },
+        { "id": "contact_num", "label": "Contact Number", "minWidth": 100 }
+    ]
+}
