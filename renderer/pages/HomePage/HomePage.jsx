@@ -1,52 +1,37 @@
-import React from 'react';
-import Header from '../../components/Header/Header';
-import MaroonButton from '../../components/MaroonButton/MaroonButton';
-import TitleBar from '../../components/TitleBar/TitleBar';
+import React, { useEffect, useState } from 'react';
+import AttendanceForm from '../../components/AttendanceForm/AttendanceForm';
+import SideMenu from '../../components/SideMenu/SideMenu';
 import styles from './HomePage.module.scss';
-import { motion } from "framer-motion";
+import Clock from 'react-clock';
+import 'react-clock/dist/Clock.css';
 
-const HomePage = () => {
-  
-  const scaleTickets = {
-    initial: {
-      opacity: 0,
-      y: "20px"
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 2
-      }
-    },
-  }
+function HomePage() {
+  const [value, setValue] = useState(new Date());
+  const dateString = String(value);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setValue(new Date()),
+      1000
+    );
+
+    return () => {
+      clearInterval(interval);
+    }
+  }, []);
 
   return (
-    <div className={styles.section}>
-      <TitleBar />
-      <Header />
-      <div className={styles.outer_container}>
-        <div className={styles.inner_container}>
-          <div className={styles.text_container}>
-            <div className={styles.title}>Welcome, NAME.</div>
-            <div className={styles.sub_text}>What would you like to do?</div>
+    <div>
+      <div className={styles.section}>
+        <SideMenu homeState="active" viewattendanceState="" viewemployeeState="" />
+        <div className={styles.content}>
+          <div className={styles.left}>
+            <Clock value={value} renderNumbers="true" size="350" />
+            {dateString}
           </div>
-              <div className={styles.buttons_container}>
-                <motion.div className={styles.btn_container}
-                    variants={scaleTickets}
-                    whileHover={{scale: 1.2}}
-                    whileTap={{scale: 1}}
-                    >
-                      <MaroonButton label='ATTENDANCE' link='../AttendancePage/AttendancePage' />
-                </motion.div>
-                <motion.div className={styles.btn_container}
-                    variants={scaleTickets}
-                    whileHover={{scale: 1.2}}
-                    whileTap={{scale: 1}}
-                    >
-                      <MaroonButton label='EMPLOYEE' link='../EmployeePage/EmployeePage' />
-                </motion.div>
-              </div>
+          <div className={styles.right}>
+            <AttendanceForm />
+          </div>
         </div>
       </div>
     </div>

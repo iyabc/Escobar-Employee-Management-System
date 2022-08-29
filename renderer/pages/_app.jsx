@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import '../styles/globals.css';
+import TitleBar from "../components/TitleBar/TitleBar";
+import styles from './_app.module.scss';
 
 export default function (props) {
   const { Component, pageProps } = props;
@@ -19,9 +21,15 @@ export default function (props) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <title>Escobar Employee Management System</title>
       </Head>
-      <Component {...pageProps} />
+      <div className={styles.container}>
+        <div className={styles.title_bar}>
+          <TitleBar />
+        </div>
+        <div className={styles.content}>
+          <Component {...pageProps} />
+        </div>
+      </div>  
     </React.Fragment>
   );
 }

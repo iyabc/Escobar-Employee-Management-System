@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: relative;
+    .content {
+        flex: 1;
+    }
+}

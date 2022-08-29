@@ -1,19 +1,20 @@
 @import '/styles/variables.scss';
 
 .section {
+    // height: 100%;
+    width: 100vw;
+    background-color: white;
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     .container {
         display: flex;
         flex-direction: column;
         width: 30rem;
         padding: 1rem;
         gap: 3rem;
-
         .header {
             display: flex;
             flex-direction: column;
@@ -28,7 +29,6 @@
                 font-weight: $h5FontWeight;
             }
         }
-
         .content {
             display: flex;
             flex-direction: column;
@@ -39,7 +39,6 @@
                 margin-top: 0.7rem;
             }
         }
-
         .btn_container {
             display: flex;
             justify-content: center;

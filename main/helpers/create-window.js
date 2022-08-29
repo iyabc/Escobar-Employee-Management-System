@@ -1,12 +1,12 @@
 import {
   screen,
   BrowserWindow,
-  ipcMain,
+  ipcMain
 } from 'electron';
 import Store from 'electron-store';
+const ipc = ipcMain;
 
 export default function createWindow(windowName, options) {
-  const ipc = ipcMain;
   const key = 'window-state';
   const name = `window-state-${windowName}`;
   const store = new Store({ name });
@@ -14,6 +14,7 @@ export default function createWindow(windowName, options) {
     width: options.width,
     height: options.height,
   };
+
   let state = {};
   let win;
 
@@ -76,15 +77,17 @@ export default function createWindow(windowName, options) {
       contextIsolation: false,
       ...options.webPreferences,
     },
-    frame: false, 
-    fullscreen: true
   });
-
+  
   ipc.on('close', () => {
-    console.log("hello");
+    win.close();
   });
 
-  // win.on('close', saveState);
+  ipc.on('minimize', () => {
+    win.minimize();
+  });
+
+  win.on('close', saveState);
 
   return win;
 };

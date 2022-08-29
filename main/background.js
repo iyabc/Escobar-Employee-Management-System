@@ -14,6 +14,8 @@ if (isProd) {
   await app.whenReady();
 
   const mainWindow = createWindow('main', {
+    fullscreen: true,
+    frame: false
   });
 
   if (isProd) {

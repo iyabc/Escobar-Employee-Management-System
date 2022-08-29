@@ -17,6 +17,78 @@
             "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
             "daily_wage": 356.90, 
             "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 300, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 300, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 200, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 300, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 300, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 200, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 300, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
+        },
+        {
+            "employee_id": 300, 
+            "last_name": "Sentorias", 
+            "first_name": "Januarius Anthony", 
+            "employee_contact": "09294758443", 
+            "employee_address": "Blk 16 L7, Lavender Street, La Vista Monnte 2, Davao City, Davao del Sur, Philippines", 
+            "daily_wage": 356.90, 
+            "employee_type":"Full-time"
         }
     ]
 }

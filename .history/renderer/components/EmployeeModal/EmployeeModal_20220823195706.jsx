@@ -1,6 +1,6 @@
 import { Box, FormControl, InputLabel, TextField, Select, MenuItem } from '@mui/material';
 import React, { useState } from 'react';
-import BigButton from '../BigButton/BigButton';
+import MaroonButton from '../MaroonButton/MaroonButton';
 import styles from './EmployeeModal.module.scss';
 
 function EmployeeModal({id, last_name, first_name, employee_contact, employee_address, daily_wage, employee_type}) {
@@ -26,12 +26,13 @@ function EmployeeModal({id, last_name, first_name, employee_contact, employee_ad
           <TextField id="employee_contact" label="Contact Number" variant="standard" value={employee_contact} fullWidth required />
           <TextField id="daily_wage" label="Daily Wage" variant="standard" value={daily_wage} fullWidth required />
           <Box sx={{ minWidth: 200 }}>
-            <FormControl fullWidth required>
+            <FormControl>
               <InputLabel id="demo-simple-select-label">Type</InputLabel>
               <Select
                 value={type}
                 label="Type"
                 onChange={handleChange}
+                fullWidth
                 required
               >
                 <MenuItem value={'admin'}>Admin</MenuItem>
@@ -42,7 +43,7 @@ function EmployeeModal({id, last_name, first_name, employee_contact, employee_ad
           </Box>
         </div>
         <div className={styles.row}>
-          <BigButton label="SUBMIT" link="" />
+          <MaroonButton label='SUBMIT' link='' />
         </div>
       </div>
     </div>
