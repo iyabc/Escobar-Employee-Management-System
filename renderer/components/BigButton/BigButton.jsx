@@ -2,15 +2,15 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './BigButton.module.scss';
 
-function BigButton({link, label}) {
+export default function BigButton({link, label}) {
   return (
-    <Link 
-    href={link}>
-        <div className={styles.container}>
-            {label}
-        </div>
-    </Link>
+    <div>
+      <Link 
+      href={link}>
+          <div className={styles.container}>
+              {label}
+          </div>
+      </Link>
+    </div>
   )
 }
-
-export default BigButton

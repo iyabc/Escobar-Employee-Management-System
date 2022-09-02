@@ -1,7 +1,19 @@
 import styles from './TitleBar.module.scss'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import MinimizeRoundedIcon from '@mui/icons-material/MinimizeRounded';
-import { close_app, minimize_app } from '../../../main/TitleFunctions';
+// import { close_app, minimize_app } from '../../../main/TitleFunctions';
+
+import { ipcRenderer } from "electron";
+
+function close_app() {
+    ipcRenderer.send('close');
+    // console.log('close');
+}
+
+function minimize_app() {
+    ipcRenderer.send('minimize');
+    // console.log("minimize");
+}
 
 const TitleBar = () => {
   return (

@@ -17,7 +17,7 @@ function SideMenu({homeState, viewattendanceState, viewemployeeState}) {
                 <li className={styles.home}>
                     <Link 
                     href='/HomePage/HomePage'>
-                        <div className={[homeState && styles["sidebar_item_selected"], styles["sidebar_item_home"]].join(" ")}>Home</div>
+                        <div className={[homeState && styles["sidebar_item_selected"], styles["sidebar_item_home"]].join(" ")}>Dashboard</div>
                     </Link>
                 </li>
                 <li>

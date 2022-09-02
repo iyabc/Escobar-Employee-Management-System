@@ -28,7 +28,7 @@ const LoginPage = () => {
                         Login
                     </div>
                     <div className={styles.lower}>
-                        Escobar Income and Expense System
+                        Escobar Employee Management System
                     </div>
                 </div>
                 <div className={styles.content}>

@@ -2,11 +2,10 @@
 
 .container {
     display: flex;
-    // position: fixed;
     justify-content: right;
-    // width: 100%;
     padding: 1.1rem 1rem;
     padding-left: 20rem;
+    -webkit-user-drag: drag;
     .buttons {
         display: flex;
         align-items: center;
