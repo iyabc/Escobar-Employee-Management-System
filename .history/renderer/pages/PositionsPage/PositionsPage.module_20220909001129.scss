@@ -1,0 +1,13 @@
+@import '/styles/variables.scss';
+
+.section {
+    // height: 100vh;
+    margin-left: 20rem;
+    .content {
+        display: flex;
+        // flex-direction: column;
+        // justify-content: space-around;
+        width: 100%;
+        flex: 1;
+    }
+}

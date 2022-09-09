@@ -1,0 +1,11 @@
+@import '/styles/variables.scss';
+
+.container {
+    background-color: aqua;
+    height: 80vh;
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

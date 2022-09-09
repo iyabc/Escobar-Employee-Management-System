@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from 'react';
+import AttendanceForm from '../../components/AttendanceForm/AttendanceForm';
+import SideMenu from '../../components/SideMenu/SideMenu';
+import styles from './HomePage.module.scss';
+import Clock from 'react-clock';
+import 'react-clock/dist/Clock.css';
+import { Select } from '@mui/material';
+
+function HomePage() {
+  const [datetime, setDateTime] = useState(new Date());
+  const dateString = String(datetime);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setDateTime(new Date()),
+      1000
+    );
+
+    return () => {
+      clearInterval(interval);
+    }
+  }, []);
+
+  return (
+    <div>
+      <div className={styles.section}>
+      <FormControl fullWidth>
+  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={age}
+    label="Age"
+    onChange={handleChange}
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+</FormControl>
+        <SideMenu homeState="active" viewattendanceState="" viewemployeeState="" />
+        <div className={styles.content}>
+          <div className={styles.left}>
+            <Clock value={datetime} renderNumbers="true" size="200" />
+            {dateString}
+          </div>
+          <div className={styles.right}>
+            <AttendanceForm datetime={datetime}/>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default HomePage

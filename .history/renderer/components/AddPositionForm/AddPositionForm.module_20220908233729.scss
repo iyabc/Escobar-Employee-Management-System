@@ -1,0 +1,10 @@
+@import '/styles/variables.scss';
+
+.container {
+    background-color: aqua;
+    height: 80vh;
+    .form {
+        display: flex;
+        align-items: center;
+    }
+}

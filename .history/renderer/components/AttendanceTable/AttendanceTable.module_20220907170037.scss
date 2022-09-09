@@ -1,0 +1,71 @@
+@import '/styles/variables.scss';
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: $h4FontSize;
+        font-weight: $h1FontWeight;
+    }
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+    }
+    .table {
+        overflow-y: scroll;
+        // flex: 1;
+        height: 70vh;
+        .delete_btn {
+            transition: all 0.3s;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        .print_btn_container {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            flex: 1;
+            .print_btn {
+                transition: all 0.5s;
+                &:hover {
+                    cursor: pointer;
+                    transform: translateY(-3px);
+                    color: $color--primary;
+                }
+            }
+        }
+    }
+    .modal {
+        height: fit-content;
+        width: fit-content;
+        padding: 2.5rem;
+        color: rgba(0, 0, 0, 0.6);
+        // overflow-y: scroll;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
