@@ -1,0 +1,15 @@
+@import '/styles/variables.scss';
+
+.container {
+    .header {
+        font-size: $h5FontSize;
+    }
+    .content {
+        font-size: $bodyFontSize;
+        padding: 3rem 0;
+    }
+    .footer {
+        display: flex;
+        align-self: flex-end;
+    }
+}

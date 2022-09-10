@@ -1,0 +1,19 @@
+@import '/styles/variables.scss';
+
+.container {
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .header {
+            font-size: $h5FontSize;
+        }
+        .content {
+            margin: 3rem 0;
+        }
+        .footer {
+            display: flex;
+            align-self: flex-end;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import '/styles/variables.scss';
+
+.container {
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .header {
+            font-size: $h5FontSize;
+            text-align: center;
+        }
+        .content {
+            margin: 2rem 0;
+            font-size: $bodyFontSize;
+            color: red;
+            .header {
+                font-weight: $h1FontWeight;
+            }
+        }
+        .footer {
+            display: flex;
+            align-self: flex-end;
+        }
+    }
+}

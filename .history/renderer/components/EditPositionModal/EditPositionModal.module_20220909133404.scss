@@ -1,0 +1,16 @@
+@import '/styles/variables.scss';
+
+.container {
+    .form {
+        .header {
+            font-size: $h5FontSize;
+        }
+        .content {
+    
+        }
+        .footer {
+            display: flex;
+            align-self: flex-end;
+        }
+    }
+}
