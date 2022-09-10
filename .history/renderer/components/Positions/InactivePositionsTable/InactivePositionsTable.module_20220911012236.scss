@@ -1,0 +1,17 @@
+@import '/styles/variables.scss';
+
+.container {
+    height: 100%;
+    box-shadow: 1px 1px 6px rgb(75, 74, 74);
+    display: flex;
+    flex-direction: column;
+    .header {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        justify-content: space-between;
+    }
+    .table {
+        height: 80%;
+    }
+}
