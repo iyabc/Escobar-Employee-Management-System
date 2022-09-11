@@ -40,21 +40,29 @@
                     height: 3rem;
                     .left {
                         font-size: $bodyFontSize;
-                        font-weight: $h3FontWeight;
-                        text-transform: uppercase;
+                    font-weight: $h3FontWeight;
                         display: flex;
                         align-items: center;
                         gap: 1rem;
                     }
                 }
-                // .sub_header {
-                //     display: flex;
-                //     flex-direction: row;
-                //     align-items: flex-end;
-                //     justify-content: space-between;
-                //     padding: 0.5rem 1rem;
-                // }
+                .sub_header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    padding: 0.5rem 1rem;
+                    .right {
+                        transition: transform 0.2s;
+                        &:hover {
+                            transform: translateY(-2.5px);
+                            cursor: pointer !important;
+                            color: $color--primary;
+                        }
+                    }
+                }
                 .table {
+                    // overflow-y: scroll;
                     flex: 1;
                     .edit_button {
                         color: $color--primary;

@@ -165,20 +165,21 @@ export default function PositionsContent() {
                 <div className={styles.active_table}>
                   <div className={styles.header}>
                     <div className={styles.left}>
-                      Active Positions
+                      ACTIVE
                     </div>
                     <div className={styles.right}>
                       {showButtons()}
                     </div>
                   </div>
                   <div className={styles.sub_header}>
-                    <div className={styles.left}>
-                      <SearchBar 
-                        // placeholder="Search Position Table"
-                        value={searched}
-                        onChange={(searchValue) => requestSearch(searchValue)}
-                        onCancelSearch={() => cancelSearch()}
-                      />
+                    <SearchBar 
+                      // placeholder="Search Position Table"
+                      value={searched}
+                      onChange={(searchValue) => requestSearch(searchValue)}
+                      onCancelSearch={() => cancelSearch()}
+                    />
+                    <div className={styles.print_btn}>
+                        <LocalPrintshopIcon />
                     </div>
                   </div>
                   <div className={styles.table}>

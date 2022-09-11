@@ -37,24 +37,32 @@
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
-                    height: 3rem;
+                    font-size: $h4FontSize;
+                    font-weight: $h1FontWeight;
                     .left {
-                        font-size: $bodyFontSize;
-                        font-weight: $h3FontWeight;
-                        text-transform: uppercase;
                         display: flex;
                         align-items: center;
                         gap: 1rem;
+                        transition: transform 0.2s;
+                        
                     }
                 }
-                // .sub_header {
-                //     display: flex;
-                //     flex-direction: row;
-                //     align-items: flex-end;
-                //     justify-content: space-between;
-                //     padding: 0.5rem 1rem;
-                // }
+                .sub_header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    // padding: 1rem;
+                    .right {
+                        &:hover {
+                            transform: translateY(-2.5px);
+                            cursor: pointer !important;
+                            color: $color--primary;
+                        }
+                    }
+                }
                 .table {
+                    // overflow-y: scroll;
                     flex: 1;
                     .edit_button {
                         color: $color--primary;

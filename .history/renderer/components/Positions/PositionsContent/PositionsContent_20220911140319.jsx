@@ -180,6 +180,9 @@ export default function PositionsContent() {
                         onCancelSearch={() => cancelSearch()}
                       />
                     </div>
+                    <div className={styles.right}>
+                        <LocalPrintshopIcon />
+                    </div>
                   </div>
                   <div className={styles.table}>
                       <DataGrid

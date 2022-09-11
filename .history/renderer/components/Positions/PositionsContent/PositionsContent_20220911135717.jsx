@@ -165,7 +165,7 @@ export default function PositionsContent() {
                 <div className={styles.active_table}>
                   <div className={styles.header}>
                     <div className={styles.left}>
-                      Active Positions
+                      ACTIVE POSITONS
                     </div>
                     <div className={styles.right}>
                       {showButtons()}
@@ -179,6 +179,9 @@ export default function PositionsContent() {
                         onChange={(searchValue) => requestSearch(searchValue)}
                         onCancelSearch={() => cancelSearch()}
                       />
+                    </div>
+                    <div className={styles.right}>
+                        <LocalPrintshopIcon />
                     </div>
                   </div>
                   <div className={styles.table}>

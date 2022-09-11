@@ -95,12 +95,7 @@ export default function InactivePositionsTable({ activateSuccessAction, inactive
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <div className={styles.left}>
-          INACTIVE Positions
-        </div>
-        <div className={styles.right}>
-          {showButtons()}
-        </div>
+        
       </div>
       <div className={styles.sub_header}>
         <div className={styles.left}>

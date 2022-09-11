@@ -47,13 +47,13 @@
                         gap: 1rem;
                     }
                 }
-                // .sub_header {
-                //     display: flex;
-                //     flex-direction: row;
-                //     align-items: flex-end;
-                //     justify-content: space-between;
-                //     padding: 0.5rem 1rem;
-                // }
+                .sub_header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    padding: 0.5rem 1rem;
+                }
                 .table {
                     flex: 1;
                     .edit_button {

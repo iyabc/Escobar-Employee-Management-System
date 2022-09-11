@@ -163,34 +163,32 @@ export default function PositionsContent() {
               </div>
               <div className={styles.right_content}>
                 <div className={styles.active_table}>
-                  <div className={styles.header}>
+                <div className={styles.header}>
                     <div className={styles.left}>
-                      Active Positions
+                        <SearchBar 
+                            // placeholder="Search Position Table"
+                            value={searched}
+                            onChange={(searchValue) => requestSearch(searchValue)}
+                            onCancelSearch={() => cancelSearch()}
+                        />
+                        <div className={styles.print_btn}>
+                            <LocalPrintshopIcon />
+                        </div>
                     </div>
                     <div className={styles.right}>
-                      {showButtons()}
+                        {showButtons()}
                     </div>
-                  </div>
-                  <div className={styles.sub_header}>
-                    <div className={styles.left}>
-                      <SearchBar 
-                        // placeholder="Search Position Table"
-                        value={searched}
-                        onChange={(searchValue) => requestSearch(searchValue)}
-                        onCancelSearch={() => cancelSearch()}
-                      />
-                    </div>
-                  </div>
-                  <div className={styles.table}>
-                      <DataGrid
-                          getRowId={(row) => row.employeePositionId}
-                          rows={rows}
-                          columns={headCells}
-                          pageSize={20}
-                          onSelectionModelChange={handleSelect}
-                          checkboxSelection
-                      />
-                  </div>
+                </div>
+                <div className={styles.table}>
+                    <DataGrid
+                        getRowId={(row) => row.employeePositionId}
+                        rows={rows}
+                        columns={headCells}
+                        pageSize={20}
+                        onSelectionModelChange={handleSelect}
+                        checkboxSelection
+                    />
+                </div>
                 </div>
                 <div className={styles.inactive_table}>
                   <InactivePositionsTable 
