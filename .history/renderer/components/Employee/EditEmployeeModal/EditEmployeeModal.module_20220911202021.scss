@@ -1,0 +1,15 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 70vh;
+    button {
+        border: none;
+    }
+    .header{
+
+    }
+}

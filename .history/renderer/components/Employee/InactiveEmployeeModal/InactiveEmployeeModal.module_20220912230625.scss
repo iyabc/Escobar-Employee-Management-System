@@ -1,0 +1,12 @@
+@import '/styles/variables.scss';
+
+.container {
+    .header {
+        padding: 1rem;
+        font-size: $bodyFontSize;
+        font-weight: $h3FontWeight;
+    }
+    .table_container {
+        height: 40vh;
+    }
+}
