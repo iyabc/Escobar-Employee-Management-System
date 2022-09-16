@@ -1,0 +1,42 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    height: fit-content;
+    button {
+        border: none;
+    }
+    .header{
+        color: white;
+        background-color: black;
+        padding: 1rem;
+        text-align: center;
+        font-size: $h5FontSize;
+        font-weight: $h4FontWeight;
+    }
+    .content_outer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 2rem;
+        .content_inner{
+            display: flex;
+            flex-direction: row;
+            &_left {
+                background-color: aqua;
+            }
+            .content_right {
+                background-color: aqua;
+            }
+        }
+    }
+    .footer {
+        padding: 1rem;
+        align-self: flex-end;
+    }
+    
+}

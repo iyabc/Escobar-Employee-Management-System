@@ -1,0 +1,12 @@
+import React from 'react';
+import styles from './MoreInfoModal.module.scsss';
+
+export default function MoreInfoModal({ employeeData }) {
+  return (
+    <div className={styles.container}>
+        <div className={styles.header}>
+            {employeeData.employeeFirstName}
+        </div>
+    </div>  
+  )
+}

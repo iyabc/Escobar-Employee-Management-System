@@ -1,0 +1,13 @@
+@import '/styles/variables.scss';
+
+.container {
+    .header {
+        padding: 1rem;
+        font-size: $bodyFontSize;
+        font-weight: $h3FontWeight;
+        justify-content: space-between;
+    }
+    .table_container {
+        height: 50vh;
+    }
+}
