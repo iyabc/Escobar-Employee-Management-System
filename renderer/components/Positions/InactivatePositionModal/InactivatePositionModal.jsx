@@ -12,7 +12,11 @@ export default function InactivatePositionModal({ inactivateSuccessAction, selec
             `${INITIAL_URL}/employee-position/inactivate`,
             {'employeePositionListDto': selectedValues},
             inactivateSuccessAction,
+<<<<<<< HEAD
             `Successfully inactivated ${selectedValues.length} employee positions.`
+=======
+            'Successfully inactivated the selected Positions'
+>>>>>>> db70ec1358604454e3917eb7365cf5bb599d790d
         )
     }
 
