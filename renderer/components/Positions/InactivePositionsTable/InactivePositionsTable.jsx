@@ -9,14 +9,17 @@ import MediumButton from '../../Shared/Buttons/MediumButton/MediumButton';
 
 const INITIAL_URL = "http://localhost:8080/api/v1";
 
+//columns
+const headCells = [
+  { field: 'employeePositionId', headerName: 'ID', flex: 1, align: 'left'},
+  { field: 'employeePositionName', headerName: 'Position Name', flex: 1, align: 'left'}
+];
+
+
 export default function InactivePositionsTable({ activateSuccessAction, inactivePositions }) {
     console.log(inactivePositions)
     const rest = new Rest();
-    //columns
-    const headCells = [
-      { field: 'employeePositionId', headerName: 'ID', flex: 1, align: 'left'},
-      { field: 'employeePositionName', headerName: 'Position Name', flex: 1, align: 'left'}
-    ];
+
     const [rows, setRows] = useState([]);
     //  search
     const [searched, setSearched] = useState("");
@@ -25,46 +28,40 @@ export default function InactivePositionsTable({ activateSuccessAction, inactive
         return String(row.employeePositionId).includes(searchValue) || row.employeePositionName.toLowerCase().includes(searchValue.toLowerCase());
         });
         setRows(filteredRows);
-      };
+    };
     const cancelSearch = () => {
       setSearched("");
       requestSearch(searched);
     }
-    //set shown rows
-    const setShownRows = () => {
-      if(rows == 0){
-        setRows(inactivePositions);
-      }
-    }
+
      //selected rows
     const [selected, setSelected] = useState("");
     const handleSelect = (ids) => {
       setSelected(ids);
     }
-    //selected values
-    const [selectedValues, setSelectedValues] = useState([]);
-    const handleSelectedValues = () => {
-      const arr = []
-      for(let i=0; i < selected.length; i++){
-        inactivePositions.forEach((item) => {
-          if(item.employeePositionId == selected[i]){
-            arr.push(item)
-          }
-        })
-      }
-      setSelectedValues(arr);
-    }
+
     //activate
     const handleActivateOnClick = () => {
-      handleSelectedValues();
+      handleActivate();
     }
     const handleActivate = () => {
+      const selectedPositions = selected.map((positionId) =>
+        inactivePositions.find(
+          (position) => position.employeePositionId === positionId
+        )
+      );
+
       rest.activate(
         (`${INITIAL_URL}/employee-position/activate`),
-        {'employeePositionListDto': selectedValues},
+        {'employeePositionListDto': selectedPositions},
         activateSuccessAction,
-        ''
+        'Successfully activated the selected Positions'
       )
+    }
+
+    const searchBarInputOnChange = (searchValue) => {
+      requestSearch(searchValue);
+      setSearched(searchValue);
     }
     //show buttons
     function showButtons() {
@@ -82,12 +79,12 @@ export default function InactivePositionsTable({ activateSuccessAction, inactive
     };
 
     useEffect(() => {
-      setRows(inactivePositions);
+      requestSearch(searched);
     }, [inactivePositions]);
 
-    useEffect(() => {
-      handleActivate();
-    }, [selectedValues])
+    // useEffect(() => {
+    //   handleActivate();
+    // }, [selectedValues])
 
     // useEffect(() => {
     //   setShownRows();
@@ -108,7 +105,7 @@ export default function InactivePositionsTable({ activateSuccessAction, inactive
           <SearchBar 
             placeholder="Search Inactive Positions Table"
             value={searched}
-            onChange={(searchValue) => requestSearch(searchValue)}
+            onChange={searchBarInputOnChange}
             onCancelSearch={() => cancelSearch()}
           />
         </div>

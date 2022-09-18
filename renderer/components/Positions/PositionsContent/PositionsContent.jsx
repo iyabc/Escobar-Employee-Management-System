@@ -31,6 +31,7 @@ export default function PositionsContent() {
     }
     //GET inactive position
     const [inactivePositions, setInactivePositions] = useState([]);
+
     const handleInactivePositions = (data) => {
       setInactivePositions(data);
     }
@@ -84,7 +85,6 @@ export default function PositionsContent() {
     };
     const handleCloseEditModal = () => { setOpenEditModal(false); };
     const editSuccessAction = () => {
-      console.log("edit success")
       handleCloseEditModal();
       getPositionsData();
     }
@@ -96,7 +96,6 @@ export default function PositionsContent() {
     };
     const handleCloseInactivateModal = () => { setOpenInactivateModal(false); };
     const inactivateSuccessAction = () => {
-      console.log("inactivate success")
       handleCloseInactivateModal();
       getInactivePositions();
       getPositionsData();
@@ -142,13 +141,18 @@ export default function PositionsContent() {
       }
     };
 
+    const searchBarInputOnChange = (searchValue) => {
+      requestSearch(searchValue);
+      setSearched(searchValue);
+    }
+
     useEffect(() => {
       getPositionsData();
       getInactivePositions();
     }, []);
 
     useEffect(() => {
-      setRows(positions);
+      requestSearch(searched);
     }, [positions]);
 
     useEffect(() => {
@@ -179,7 +183,7 @@ export default function PositionsContent() {
                       <SearchBar 
                         // placeholder="Search Position Table"
                         value={searched}
-                        onChange={(searchValue) => requestSearch(searchValue)}
+                        onChange={searchBarInputOnChange}
                         onCancelSearch={() => cancelSearch()}
                       />
                     </div>
