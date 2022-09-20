@@ -1,0 +1,9 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    .toggle_group {
+        display: flex;
+        justify-content: center;
+        background: none;
+    }
+}

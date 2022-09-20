@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    .title_bar {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        height: fit-content;
+        background-color:aqua;
+    }
+    .content {
+        position: relative;
+        // overflow-y: scroll;
+        overflow-x: hidden;
+        flex: 1;
+    }
+}

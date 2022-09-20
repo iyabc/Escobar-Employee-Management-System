@@ -1,0 +1,14 @@
+@import '/styles/variables.scss';
+
+.container {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    width: 400px;
+    .header {
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}

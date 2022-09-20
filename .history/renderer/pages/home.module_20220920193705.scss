@@ -1,0 +1,11 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    position: absolute;
+    .toggle_group {
+        display: flex;
+        justify-content: center;
+        background: none;
+    }
+}

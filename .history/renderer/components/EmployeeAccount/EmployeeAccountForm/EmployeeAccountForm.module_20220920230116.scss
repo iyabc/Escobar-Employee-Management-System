@@ -1,0 +1,37 @@
+@import '/styles/variables.scss';
+
+.container {
+    color: black; 
+    .header {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: $h4FontSize;
+        font-weight: $h2FontWeight;
+        text-transform: uppercase;
+    }
+    .content {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        gap: 2rem;
+        &_group {
+            width: 50%;
+            &_label {
+                color: rgb(75, 75, 75);
+                margin-bottom: 1rem;
+                font-weight: $h4FontWeight;
+            }
+            &_checkbox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                &_label {
+                    font-size: $bodyFontSize;
+                }
+            }
+        }
+    }
+}

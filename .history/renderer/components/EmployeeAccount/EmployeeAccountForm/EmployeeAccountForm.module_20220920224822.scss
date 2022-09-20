@@ -1,0 +1,13 @@
+@import '/styles/variables.scss';
+
+.container {
+    .header {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .content {
+        padding: 1rem;
+    }
+}
