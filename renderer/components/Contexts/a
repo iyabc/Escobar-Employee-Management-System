@@ -1,0 +1,174 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import Account from '../../model/Account.tsx';
+
+const UserContext = createContext();
+const UserUpdateContext = createContext();
+
+export function UserProvider({ children }) {
+  const [user, setUser] = useState(
+    new Account(
+      1,
+      '',
+      '',
+      '',
+      false,
+      false,
+      false,
+      false,
+      false
+    )
+  );
+
+  const handleUserOnChange = (
+    accountId,
+    accountUsername,
+    accountPassword,
+    employeeName,
+    accessInventoryManagementSystem,
+    accessEmployeeManagementSystem,
+    accessIncomeAndExpenseSystem,
+    accessOrderingSystem,
+    isActive
+  ) => {
+    setUser(
+      new Account(
+        accountId,
+        accountUsername,
+        accountPassword,
+        employeeName,
+        accessInventoryManagementSystem,
+        accessEmployeeManagementSystem,
+        accessIncomeAndExpenseSystem,
+        accessOrderingSystem,
+        isActive
+    ));
+    localStorage.setItem("employeeName", employeeName);
+  }
+
+  useEffect(() => {
+    const fetchUser = () => {
+      setUser(
+        new Account(
+        1,
+        '',
+        '',
+        localStorage.getItem('employeeName'),
+        false,
+        false,
+        false,
+        false,
+        false
+      ))
+    };
+
+    fetchUser();
+  }, []);
+
+  return (
+    <UserContext.Provider value={user}>
+      <UserUpdateContext.Provider value={handleUserOnChange}>
+        {children}
+      </UserUpdateContext.Provider>
+    </UserContext.Provider>
+  );
+}
+
+export function useUser() {
+  return useContext(UserContext);
+}
+
+export function useUserUpdate() {
+  return useContext(UserUpdateContext);
+}
+
+//
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import Account from '../../model/Account.tsx';
+
+const UserContext = createContext();
+const UserUpdateContext = createContext();
+
+export function UserProvider({ children }) {
+  const [user, setUser] = useState(new Account("", "", ""));
+
+  const handleUserOnChange = (username, password, employeeName) => {
+    setUser(new Account(username, password, employeeName));
+    localStorage.setItem("employeeName", employeeName);
+  }
+
+  useEffect(() => {
+    const fetchUser = () => {
+      setUser(new Account("", "", localStorage.getItem('employeeName')))
+    };
+
+    fetchUser();
+  }, []);
+
+  return (
+    <UserContext.Provider value={user}>
+      <UserUpdateContext.Provider value={handleUserOnChange}>
+        {children}
+      </UserUpdateContext.Provider>
+    </UserContext.Provider>
+  );
+}
+
+export function useUser() {
+  return useContext(UserContext);
+}
+
+export function useUserUpdate() {
+  return useContext(UserUpdateContext);
+}
+
+//model
+class Account {
+    accountId: number;
+    accountUsername: string;
+    accountPassword: string;
+    employeeName: string;
+    accessInventoryManagementSystem: boolean;
+    accessEmployeeManagementSystem: boolean;
+    accessIncomeAndExpenseSystem: boolean;
+    accessOrderingSystem: boolean;
+    isActive: boolean
+
+    constructor (
+        accountId: number,
+        accountUsername: string,
+        accountPassword: string,
+        employeeName: string,
+        accessInventoryManagementSystem: boolean,
+        accessEmployeeManagementSystem: boolean,
+        accessIncomeAndExpenseSystem: boolean,
+        accessOrderingSystem: boolean,
+        isActive: boolean
+    ){
+        this.accountId = accountId;
+        this.accountUsername = accountUsername;
+        this.accountPassword = accountPassword;
+        this.employeeName = employeeName;
+        this.accessInventoryManagementSystem = accessInventoryManagementSystem;
+        this.accessEmployeeManagementSystem = accessEmployeeManagementSystem;
+        this.accessIncomeAndExpenseSystem = accessIncomeAndExpenseSystem;
+        this.accessOrderingSystem = accessOrderingSystem;
+        this.isActive = isActive;
+    }
+}
+
+export default Account;
+
+
+class Account {
+  accountUsername: string;
+  accountPassword: string;
+  employeeName: string;
+
+  constructor(accountUsername: string, accountPassword: string, employeeName: string) {
+    this.accountUsername = accountUsername;
+    this.accountPassword = accountPassword;
+    this.employeeName = employeeName
+  }
+}
+
+export default Account;
