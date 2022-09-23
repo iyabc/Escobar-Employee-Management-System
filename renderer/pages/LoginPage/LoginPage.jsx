@@ -16,7 +16,7 @@ export default function LoginPage() {
     const accountOnChange = useUserUpdate();
     const router = useRouter();
     const rest = new Rest();
-    const [type, setType] = useState('admin');
+    const [type, setType] = useState('employee');
     const handleTypeChange = (e) => {
       setType(e.target.value);
     }
@@ -93,7 +93,7 @@ export default function LoginPage() {
         `${INITIAL_URL}/login/admin`,
         account,
         successfulLoginAdmin,
-        `Successfully Logged In Admin ${account.employeeName}`
+        `Successfully Logged In as Admin`
       );
     };
     const handleEmployeeLogin =() => {
@@ -102,13 +102,12 @@ export default function LoginPage() {
         `${INITIAL_URL}/login/employee`,
         account,
         successfulLoginEmployee,
-        `Successfully Logged In Employee ${account.employeeName}`
+        `Successfully Logged In as Employee`
       );
     }
 
   return (
     <div>
-        {/* <Toast /> */}
         <div className={styles.section}>
             <div className={styles.container}>
               <ToggleButtonGroup
@@ -118,8 +117,8 @@ export default function LoginPage() {
                 exclusive
                 onChange={handleTypeChange}
               >
-                <ToggleButton value="admin">Admin</ToggleButton>
                 <ToggleButton value="employee">Employee</ToggleButton>
+                <ToggleButton value="admin">Admin</ToggleButton>
               </ToggleButtonGroup>
                 <div className={styles.header}>
                     <div className={styles.upper}>

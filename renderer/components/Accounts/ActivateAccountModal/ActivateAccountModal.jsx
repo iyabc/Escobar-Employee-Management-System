@@ -12,7 +12,7 @@ export default function ActivateAccountModal({ activateSuccessAction, selectedVa
     const handleSubmit = () => {
         rest.activate(
             `${INITIAL_URL}/account/activate`,
-            { 'accountUsernameListDto' : selectedValues.map((item) => item.accountUsername)},
+            { 'accountUsernames' : selectedValues.map((item) => item.accountUsername)},
             activateSuccessAction,
             `Successfully activated ${selectedValues.length} account/s`
         )

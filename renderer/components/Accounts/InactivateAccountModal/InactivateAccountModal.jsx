@@ -11,7 +11,7 @@ export default function InactivateAccountModal({ inactivateSuccessAction, select
     const handleSubmit = () => {
         rest.inactivate(
             `${INITIAL_URL}/account/inactivate`,
-            { 'accountUsernameListDto' : selectedValues.map((item) => item.accountUsername)},
+            { 'accountUsernames' : selectedValues.map((item) => item.accountUsername)},
             inactivateSuccessAction,
             `Successfully inactivated ${selectedValues.length} account/s`
         )
