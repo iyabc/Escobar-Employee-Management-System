@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import styles from './EmployeeAccountForm.module.scss';
-import { useUser } from '../../Contexts/UserContext.jsx';
+import { useUser, useUserUpdate } from '../../Contexts/UserContext.jsx';
 import { TextField } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import MediumButton from '../../Shared/Buttons/MediumButton/MediumButton';
 import EditIcon from '@mui/icons-material/Edit';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import Account from '../../../model/Account.tsx';
+import { toast } from 'react-toastify';
+import Rest from '../../../rest/Rest.tsx';
+
+const INITIAL_URL = "http://localhost:8080/api/v1";
 
 export default function EmployeeAccountForm() {
     const { 
@@ -24,34 +28,63 @@ export default function EmployeeAccountForm() {
      const isEdit = () => {
         if(toEdit){
             setToEdit(false);
-            setOldPassword(accountPassword);
         }else {
             setToEdit(true);
-            setOldPassword('');
         }
      }
-     const [oldPassword, setOldPassword] = useState(accountPassword);
+     const [oldPassword, setOldPassword] = useState('');
+     const [newPassword, setNewPassword] = useState('');
      const [confirmPassword, setConfirmPassword] = useState('');
-     const [newValues, setNewValues] = useState(
-        new Account (
+
+     const rest = new Rest();
+    //  const [newValues, setNewValues] = useState(
+    //     new Account (
+    //         accountId,
+    //         accountUsername,
+    //         '',
+    //         employeeName,
+    //         accessInventoryManagementSystem,
+    //         accessEmployeeManagementSystem,
+    //         accessIncomeAndExpenseSystem,
+    //         accessOrderingSystem,
+    //         isActive
+    //     )
+    //  )
+
+     const handleOldPasswordOnChange = (e) => {
+        setOldPassword(e.target.value);
+     }
+
+     const handleNewPasswordOnChange = (e) => {
+        setNewPassword(e.target.value);
+     }
+
+     const handleConfirmNewPasswordOnChange = (e) => {
+        setConfirmPassword(e.target.value);
+     }
+    //  const handleChange = (e) => {
+    //     if(e.target.name == 'confirmPassword'){
+    //         setConfirmPassword(e.target.value);
+    //     }else{
+    //         setNewValues({...newValues, [e.target.name]:e.target.value });
+    //     }
+    //  }
+
+    const editSuccessAction = () => {
+        accountOnChange(
             accountId,
-            accountUsername,
-            '',
+            accountUsername, 
+            newPassword, 
             employeeName,
             accessInventoryManagementSystem,
             accessEmployeeManagementSystem,
             accessIncomeAndExpenseSystem,
             accessOrderingSystem,
             isActive
-        )
-     )
-     const handleChange = (e) => {
-        if(e.target.name == 'confirmPassword'){
-            setConfirmPassword(e.target.value);
-        }else{
-            setNewValues({...newValues, [e.target.name]:e.target.value });
-        }
-     }
+          );
+
+          localStorage.setItem("accountPassword", newPassword);
+    }
      const handleSubmit = () => {
         console.log(
             accountId,
@@ -64,12 +97,45 @@ export default function EmployeeAccountForm() {
             accessOrderingSystem,
             isActive
         )
+
+        if (oldPassword === '' || newPassword === '' || confirmPassword === ''){
+            toast.error('There are empty fields');
+            return;
+        }
+
+        if (oldPassword !== accountPassword){
+            toast.error('Old password is wrong');
+            return;
+        }
+
+        if (newPassword !== confirmPassword){
+            toast.error('New password and Confirm New Password does not match');
+            return;
+        }
+
         // if(confirmPassword == newValues.accountPassword && newValues.accountPassword != ''){
         //     console.log(newValues)
         // }else if(confirmPassword == '' && newValues.accountPassword != ''){
         //     toast.error('Please confirm new password.')
         //     console.log(newValues)
         // }
+        const newAccount = new Account(            
+            accountId,
+            accountUsername,
+            newPassword,
+            employeeName,
+            accessInventoryManagementSystem,
+            accessEmployeeManagementSystem,
+            accessIncomeAndExpenseSystem,
+            accessOrderingSystem,
+            isActive);
+
+        rest.update(
+            `${INITIAL_URL}/account/update/${accountId}`,
+            newAccount,
+            editSuccessAction,
+            `Successfully edited account ${accountId}`
+        )
      }
      
 
@@ -93,9 +159,9 @@ export default function EmployeeAccountForm() {
                         <div className={styles.content_group_detail}>
                             <TextField disabled name='employeeName' label='Name' value={employeeName} variant='standard' fullWidth/>
                             <TextField disabled name='accountUsername' label='Username' value={accountUsername} variant='standard' fullWidth/>
-                            <TextField onChange={handleChange} type='password' name='oldPassword' value={oldPassword} label='Old Password' variant='standard' fullWidth/>
-                            <TextField onChange={handleChange} type='password' name='accountPassword' label='New Password' variant='standard' fullWidth/>
-                            <TextField onChange={handleChange} name='confirmPassword' value={confirmPassword} type='password' label='Confirm New Password' variant='standard' fullWidth/>
+                            <TextField onChange={handleOldPasswordOnChange} value={oldPassword} type='password' name='oldPassword' label='Old Password' variant='standard' fullWidth/>
+                            <TextField onChange={handleNewPasswordOnChange} value={newPassword} type='password' name='accountPassword' label='New Password' variant='standard' fullWidth/>
+                            <TextField onChange={handleConfirmNewPasswordOnChange} value={confirmPassword} error={newPassword !== confirmPassword} helperText={newPassword !== confirmPassword && "New password does not match"} name='confirmPassword' type='password' label='Confirm New Password' variant='standard' fullWidth/>
                         </div>
                     </div>
                     <div className={styles.content_group}>

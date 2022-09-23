@@ -10,10 +10,13 @@ import shortid from 'shortid';
 import Rest from "../../../rest/Rest.tsx";
 import { Modal } from '@mui/material';
 import MediumButton from '../../Shared/Buttons/MediumButton/MediumButton';
+import { useUser } from '../../Contexts/UserContext';
 
 const INITIAL_URL = "http://localhost:8080/api/v1";
 
 export default function EmployeeAttendanceTable() {
+
+  const { employeeName } = useUser();
   const headCells = [
     // { field: 'employeeName', headerName: 'Employee Name', flex: 1, align: 'left' },
     { field: 'attendanceTime', headerName: 'Time', flex: 1, align: 'left' },
@@ -26,7 +29,7 @@ export default function EmployeeAttendanceTable() {
     setFetchedData(data);
   }
   const getAttendanceData = () => {
-    rest.get(`${INITIAL_URL}/attendance`, handleAttendanceData)
+    rest.get(`${INITIAL_URL}/attendance/${employeeName}`, handleAttendanceData)
   }
   //  search
   const [rows, setRows] = useState([]);

@@ -59,6 +59,9 @@ export default function LoginPage() {
         account.isActive
       );
 
+      localStorage.setItem("accountId", employee.accountId);
+      localStorage.setItem("accountUsername", employee.accountUsername);
+      localStorage.setItem("accountPassword", employee.accountPassword);
       localStorage.setItem("employeeName", employee.employeeName);
       localStorage.setItem("accessInventoryManagementSystem", employee.accessInventoryManagementSystem);
       localStorage.setItem("accessEmployeeManagementSystem", employee.accessEmployeeManagementSystem);
@@ -68,27 +71,31 @@ export default function LoginPage() {
       router.replace("/AttendancePage/AttendancePage");
     };
     const successfulLoginEmployee = (employee) => {
+      console.log(employee);
       accountOnChange(
-        account.accountId,
-        account.accountUsername, 
-        account.accountPassword, 
+        employee.accountId,
+        employee.accountUsername, 
+        employee.accountPassword, 
         employee.employeeName,
         employee.accessInventoryManagementSystem,
         employee.accessEmployeeManagementSystem,
         employee.accessIncomeAndExpenseSystem,
         employee.accessOrderingSystem,
-        account.isActive
+        employee.isActive
       );
+      localStorage.setItem("accountId", employee.accountId);
+      localStorage.setItem("accountUsername", employee.accountUsername);
+      localStorage.setItem("accountPassword", employee.accountPassword);
       localStorage.setItem("employeeName", employee.employeeName);
       localStorage.setItem("accessInventoryManagementSystem", employee.accessInventoryManagementSystem);
       localStorage.setItem("accessEmployeeManagementSystem", employee.accessEmployeeManagementSystem);
       localStorage.setItem("accessIncomeAndExpenseSystem", employee.accessIncomeAndExpenseSystem);
       localStorage.setItem("accessOrderingSystem", employee.accessOrderingSystem);
+      localStorage.setItem("isActive", employee.isActive);
 
       router.replace("/HomePage/HomePage");
     };
     const handleAdminLogin = () => {
-      console.log(account)
       rest.login(
         `${INITIAL_URL}/login/admin`,
         account,

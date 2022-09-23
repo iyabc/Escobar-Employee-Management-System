@@ -55,7 +55,8 @@ export function UserProvider({ children }) {
         localStorage.getItem('accessInventoryManagementSystem'),
         localStorage.getItem('accessEmployeeManagementSystem'),
         localStorage.getItem('accessIncomeAndExpenseSystem'),
-        localStorage.getItem('accessOrderingSystem')
+        localStorage.getItem('accessOrderingSystem'),
+        localStorage.getItem('isActive')
       ))
     };
 
