@@ -15,7 +15,7 @@ export function UserProvider({ children }) {
       false,
       false,
       false,
-      false
+      true
     )
   );
 
@@ -39,16 +39,9 @@ export function UserProvider({ children }) {
         accessInventoryManagementSystem,
         accessEmployeeManagementSystem,
         accessIncomeAndExpenseSystem,
-        accessOrderingSystem
+        accessOrderingSystem,
+        isActive
     ));
-    localStorage.setItem("accountId", accountId);
-    localStorage.setItem("accountUsername", accountUsername);
-    localStorage.setItem("accountPassword", accountPassword);
-    localStorage.setItem("employeeName", employeeName);
-    localStorage.setItem("accessInventoryManagementSystem", accessInventoryManagementSystem);
-    localStorage.setItem("accessEmployeeManagementSystem", accessEmployeeManagementSystem);
-    localStorage.setItem("accessIncomeAndExpenseSystem", accessIncomeAndExpenseSystem);
-    localStorage.setItem("accessOrderingSystem", accessOrderingSystem);
   }
 
   useEffect(() => {

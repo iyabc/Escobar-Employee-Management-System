@@ -46,38 +46,51 @@ export default function LoginPage() {
         account.isActive
       )
     };
-    const successfulLoginAdmin = (employeeName) => {
+    const successfulLoginAdmin = (employee) => {
       accountOnChange(
         account.accountId,
         account.accountUsername, 
         account.accountPassword, 
-        employeeName,
-        account.accessInventoryManagementSystem,
-        account.accessEmployeeManagementSystem,
-        account.accessIncomeAndExpenseSystem,
-        account.accessOrderingSystem,
+        employee.employeeName,
+        employee.accessInventoryManagementSystem,
+        employee.accessEmployeeManagementSystem,
+        employee.accessIncomeAndExpenseSystem,
+        employee.accessOrderingSystem,
         account.isActive
       );
+
+      localStorage.setItem("employeeName", employee.employeeName);
+      localStorage.setItem("accessInventoryManagementSystem", employee.accessInventoryManagementSystem);
+      localStorage.setItem("accessEmployeeManagementSystem", employee.accessEmployeeManagementSystem);
+      localStorage.setItem("accessIncomeAndExpenseSystem", employee.accessIncomeAndExpenseSystem);
+      localStorage.setItem("accessOrderingSystem", employee.accessOrderingSystem);
+
       router.replace("/AttendancePage/AttendancePage");
     };
-    const successfulLoginEmployee = (employeeName) => {
+    const successfulLoginEmployee = (employee) => {
       accountOnChange(
         account.accountId,
         account.accountUsername, 
         account.accountPassword, 
-        employeeName,
-        account.accessInventoryManagementSystem,
-        account.accessEmployeeManagementSystem,
-        account.accessIncomeAndExpenseSystem,
-        account.accessOrderingSystem,
+        employee.employeeName,
+        employee.accessInventoryManagementSystem,
+        employee.accessEmployeeManagementSystem,
+        employee.accessIncomeAndExpenseSystem,
+        employee.accessOrderingSystem,
         account.isActive
       );
+      localStorage.setItem("employeeName", employee.employeeName);
+      localStorage.setItem("accessInventoryManagementSystem", employee.accessInventoryManagementSystem);
+      localStorage.setItem("accessEmployeeManagementSystem", employee.accessEmployeeManagementSystem);
+      localStorage.setItem("accessIncomeAndExpenseSystem", employee.accessIncomeAndExpenseSystem);
+      localStorage.setItem("accessOrderingSystem", employee.accessOrderingSystem);
+
       router.replace("/HomePage/HomePage");
     };
     const handleAdminLogin = () => {
       console.log(account)
       rest.login(
-        `${INITIAL_URL}/login`,
+        `${INITIAL_URL}/login/admin`,
         account,
         successfulLoginAdmin,
         `Successfully Logged In Admin ${account.employeeName}`
@@ -86,7 +99,7 @@ export default function LoginPage() {
     const handleEmployeeLogin =() => {
       console.log(account)
       rest.login(
-        `${INITIAL_URL}/login`,
+        `${INITIAL_URL}/login/employee`,
         account,
         successfulLoginEmployee,
         `Successfully Logged In Employee ${account.employeeName}`
@@ -119,7 +132,7 @@ export default function LoginPage() {
                 <div className={styles.content}>
                     <TextField 
                       id="username" 
-                      label="Username" 
+                      label={type === 'admin' ? "Admin Username" : "Employee Username"} 
                       variant="standard" 
                       fullWidth 
                       value={account.accountUsername}
@@ -128,23 +141,23 @@ export default function LoginPage() {
                     <TextField 
                       type='password'
                       id="password" 
-                      label="Password" 
+                      label={type === 'admin' ? "Admin Password" : "Employee Password"}
                       variant="standard" 
                       fullWidth 
                       value={account.accountPassword}
                       onChange={handlePasswordOnChange}
                     />
                 </div>
-                { type == 'admin' ? (
+                { type === 'admin' ? (
                   <div className={styles.btn_container}>
                       <button onClick={handleAdminLogin}>
-                          <BigButton label="SUBMIT"/>
+                          <BigButton label="LOGIN"/>
                       </button>
                   </div>
                 ) : (
                   <div className={styles.btn_container}>
                       <button onClick={handleEmployeeLogin}>
-                          <BigButton label="SUBMIT"/>
+                          <BigButton label="LOGIN"/>
                       </button>
                   </div>
                 ) }
