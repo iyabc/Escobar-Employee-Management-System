@@ -26,6 +26,8 @@
     "electron-store": "^8.0.1",
     "fontawesome": "^5.6.3",
     "framer-motion": "^7.0.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25",
     "material-ui-search-bar": "^1.0.0",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.37",
